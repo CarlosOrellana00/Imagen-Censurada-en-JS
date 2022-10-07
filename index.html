@@ -1,21 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Imagen Censurada</title>
-  <link rel="shortcut icon" href="img/icon censorship.png">
-</head>
-<body>
-  <div class="medio">
-    <div class="image">
-      <img src="img/susto.jpg" class="img" alt="">
-      <div class="text">Esta Foto tiene contenido explisito o violento, se recomienda discreción</div>
-      <button onclick="coverImage()" class="btn">Ver Contenido</button>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="middle">
+      <div class="image">
+        <img src="img/susto.jpg" class="img" alt="">
+        <div class="text">Imagen con Contenido Sensible, se recomienda discreción.</div>
+        <button onclick="coverImage()" class="btn">Descubrir Image</button>
+      </div>
     </div>
-  </div>
 
+    <script type="text/javascript">
+      var btn = document.getElementsByClassName('btn')[0],
+          text = document.getElementsByClassName('text')[0],
+          img = document.getElementsByClassName('img')[0],
+          c = 0;
+      function coverImage() {
+        if(c == 0){
+          btn.innerHTML = "Cubrir Imagen";
+          text.style.display = "none";
+          img.style.filter = "blur(0)";
+          c = 1;
+        }else{
+          btn.innerHTML = "Descubrir Imagen";
+          text.style.display = "block";
+          img.style.filter = "blur(24px)";
+          c = 0;
+        }
+      }
+    </script>
 
-</body>
+  </body>
 </html>
